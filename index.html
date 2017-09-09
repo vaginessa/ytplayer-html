@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YTPlayer</title>
+</head>
+<body>
+<div id="body">
+    <div>
+        <input id="playlisturl">
+        <button onclick="load_playlist()">Load</button>
+    </div>
+    <div id="player">
+        <img id="thumbnail" src=""/>
+        <p id="title"></p>
+        <button onclick="previous()">Previous</button>
+        <button onclick="playpause()">Play/Pause</button>
+        <button onclick="next()">Next</button>
+    </div>
+    <div id="yt"></div>
+</div>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="http://www.youtube.com/player_api"></script>
+<script src="main.js"></script>
+</body>
+</html>
