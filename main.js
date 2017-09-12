@@ -114,6 +114,7 @@ function displayResult(videoSnippet) {
 
 function load_song(song) {
     console.log('Loading song number: ', current_song);
+    document.title = song.title;
     document.getElementById('title').innerHTML = song.title;
     document.getElementById('thumbnail').src = song.thumbnail.high.url;
     player.loadVideoById(song.id)
@@ -141,6 +142,14 @@ function onYouTubePlayerAPIReady() {
 // when video ends
 function onPlayerStateChange(event) {
     player_state = event.data;
+    var button = document.querySelector('#playpause i');
+    button.classList.remove('fa-play');
+    button.classList.remove('fa-pause');
+    if (event.data === 1) {
+        button.classList.add('fa-pause');
+    } else {
+        button.classList.add('fa-play');
+    }
     if(event.data === 0) {
         next();
     }

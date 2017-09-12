@@ -2,25 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>YTPlayer</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<div id="body">
-    <div>
-        <input id="playlisturl">
-        <button onclick="load_playlist()">Load</button>
+<div id="main" class="container">
+    <div class="row">
+        <div id="loader" class="col-lg-12">
+            <div class="input-group">
+                <input id="playlisturl" onfocus="this.select()" title="Playlist URL" class="form-control">
+                <span class="input-group-btn">
+                    <button onclick="load_playlist()" class="btn btn-dark">Load</button>
+                </span>
+            </div>
+        </div>
     </div>
-    <div id="player">
-        <img id="thumbnail" src=""/>
-        <p id="title"></p>
-        <button onclick="previous()">Previous</button>
-        <button onclick="playpause()">Play/Pause</button>
-        <button onclick="next()">Next</button>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <img id="thumbnail" src=""/>
+            <div id="yt"></div>
+        </div>
     </div>
-    <div id="yt"></div>
-</div>
-<script src="https://apis.google.com/js/api.js"></script>
-<script src="https://www.youtube.com/player_api"></script>
-<script src="main.js"></script>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <p id="title"></p>
+        </div>
+        <div class="col-lg-12 text-center">
+            <button id="previous" onclick="previous()" class="btn btn-dark"><i class="fa fa-3x fa-step-backward"></i></button>
+            <button id="playpause" onclick="playpause()" class="btn btn-dark"><i class="fa fa-3x fa-play"></i></button>
+            <button id="next" onclick="next()" class="btn btn-dark"><i class="fa fa-3x fa-step-forward"></i></button>
+        </div>
+    </div>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://www.youtube.com/player_api"></script>
+    <script src="main.js"></script>
 </body>
 </html>

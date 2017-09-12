@@ -1,0 +1,12 @@
+body {
+    background-color: #272B30;
+    color: rgb(170, 170, 170);
+}
+
+#main {
+    margin-top: 30px;
+}
+
+#loader {
+    margin-bottom: 15px;
+}
