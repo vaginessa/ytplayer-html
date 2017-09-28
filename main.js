@@ -113,11 +113,16 @@ function displayResult(videoSnippet) {
 }
 
 function load_song(song) {
-    console.log('Loading song number: ', current_song);
+    console.log('Loading song: ', song.id);
     document.title = song.title;
     document.getElementById('title').innerHTML = song.title;
     document.getElementById('thumbnail').src = song.thumbnail.high.url;
-    player.loadVideoById(song.id)
+    player.loadVideoById(song.id);
+    setTimeout(function () {
+        if (player_state === -1) {
+            next();
+        }
+    }, 1000);
 }
 
 
